@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: testgo0106d-gitops
+  description: This is GitOps manifest for testgo0106d   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: testgo0106d
+    backstage.io/kubernetes-id: testgo0106d 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: testgo0106d   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:testgo0106d
