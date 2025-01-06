@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:   
-  annotations:  
+metadata:
+  annotations:
     tad.gitops.set/image: ".spec.template.spec.containers[0].image"
     tad.gitops.get/image: ".spec.template.spec.containers[0].image"
     tad.gitops.set/replicas: ".spec.replicas"
-    tad.gitops.get/replicas: ".spec.replicas" 
+    tad.gitops.get/replicas: ".spec.replicas"
   name: testgo0106d
 spec:
-  replicas: 1 
-  template: 
+  replicas: 1
+  template:
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/dance-bootstrap-app:latest
-        name: container-image  
+        - image: nexus-repo-nexus.apps.rosa.rhtap-services.xmdt.p3.openshiftapps.com/rhtap/testgo0106d:ef5ec8455edc02a7d702111f0cd735e7ac5f0b9f@sha256:1eb9d9091ad6b819838577a0e13773c4ebac9399998d6cc452ffee1c3f6f8eb9
+          name: container-image
